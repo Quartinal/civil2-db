@@ -1,12 +1,12 @@
+import { getRebalancerStatus, triggerRebalance } from "../db/rebalancer";
 import {
+    banUser,
     createUser,
     getUser,
     isUserBanned,
-    banUser,
     unbanUser,
 } from "../models/user";
 import { isBannedUrl, recordVisit } from "../models/visit";
-import { getRebalancerStatus, triggerRebalance } from "../db/rebalancer";
 
 function mapUser(u: Awaited<ReturnType<typeof getUser>>) {
     if (!u) return null;

@@ -1,5 +1,5 @@
-import { getDB } from "../db/shard";
 import { cached, invalidateTag, redis } from "../cache";
+import { getDB } from "../db/shard";
 
 export interface User {
     id: string;

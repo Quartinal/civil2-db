@@ -1,6 +1,6 @@
-import { getDB } from "./db/shard";
 import QueryBuilder from "./db/builder";
-import { sqlObj, sqlId } from "./sql";
+import { getDB } from "./db/shard";
+import { sqlId, sqlObj } from "./sql";
 
 export function createModel<T extends Record<string, any>>(schema: {
     table: string;

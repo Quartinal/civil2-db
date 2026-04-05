@@ -1,5 +1,5 @@
 import Redis from "ioredis";
-import { encode, decode } from "./db/msgpack";
+import { decode, encode } from "./db/msgpack";
 
 export const redis = new Redis(process.env.REDIS_URL!);
 

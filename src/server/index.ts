@@ -1,6 +1,7 @@
 import { createYoga } from "graphql-yoga";
-import { schema } from "../graphql/schema";
 import { startRebalancer } from "../db/rebalancer";
+import { schema } from "../graphql/schema";
+import { initBannedDomains } from "../shared/banned-domains";
 
 const PORT = Number(process.env.PORT) || 4000;
 const ALLOWED_ORIGIN =
@@ -18,6 +19,7 @@ const yoga = createYoga({
 });
 
 startRebalancer();
+initBannedDomains();
 
 Bun.serve({
     port: PORT,
